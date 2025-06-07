@@ -71,9 +71,10 @@ services:
       context: .
       dockerfile: EAAppTest/Dockerfile
     restart: on-failure
-    depends_on: 
-      - selenium-hub
-      - ea_webapp
+    depends_on:
+      ea_webapp:
+         condition : service_started
+
     networks: 
       - ea_network
       
