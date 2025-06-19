@@ -67,3 +67,23 @@ docker-compose up --build
 
 ---
 
+## Branches
+
+This repository contains two main branches, each with a different approach to Selenium test execution and CI integration:
+
+- **main**  
+  The default branch.  
+  - Includes GitHub Actions workflows for CI/CD.
+  - Selenium tests are configured to run in environments compatible with GitHub Actions (such as local WebDriver or supported cloud services).
+  - Recommended for most users, especially when running tests in GitHub Actions or other CI/CD pipelines.
+
+- **using-selenium-nodes**  
+  Uses a custom Selenium Grid setup (e.g., via Docker Compose with multiple browser nodes).  
+  - Not compatible with GitHub Actions due to the way Selenium Grid is orchestrated.
+  - Intended for local or custom Docker-based environments where you want to run tests across multiple browsers/nodes.
+
+**How to choose a branch:**
+- Use `main` for standard development and CI workflows.
+- Use `using-selenium-nodes` if you want to experiment with or require a custom Selenium Grid setup not supported by GitHub Actions.
+
+---
